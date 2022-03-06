@@ -9,6 +9,7 @@ const ul1 = document.getElementById('completedul');
 btn.addEventListener("click", (e)=>{
     const btn1 = document.createElement("button");
     const btn2 = document.createElement("button");
+    const btn3 = document.createElement("button");
     const li1 = document.createElement("li");
     if(todo.value !== '')
     {   
@@ -17,9 +18,11 @@ btn.addEventListener("click", (e)=>{
         li1.innerHTML= todo.value;
         btn1.innerHTML = 'D';
         btn2.innerHTML = 'C';
+        btn3.innerHTML = 'E';
         ul.appendChild(li1);
         li1.appendChild(btn1);
         li1.appendChild(btn2);
+        li1.appendChild(btn3);
         todo.value=''
     
     }
@@ -39,6 +42,17 @@ btn.addEventListener("click", (e)=>{
         })
     })
     
+    btn3.addEventListener('click',(e)=>{
+        todo.value = li1.innerText;
+        console.log(todo.value)
+        li1.remove();
+
+
+    })
+
+    
+
+
     btn1.addEventListener('click', (e)=>{
         li1.remove();
     
